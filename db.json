@@ -1,24 +1,33 @@
 {
 	"articles" : [
         {
-        	"id" : 	1,
-        	"title" : "Titre 1",
-        	"content" : "Contents 1"
+          "id" : 1,
+          "title" : "Titre 1",
+          "image" : "images/the_flash.jpeg",
+          "content" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis",
+          "exerpt" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition"
         },
         {
-        	"id" : 	2,
-        	"title" : "Titre 2",
-        	"content" : "Contents 2"
+          "id" : 2,
+          "title" : "Titre 2",
+          "image" : "",
+          "content" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page",
+          "exerpt" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition"
         },   
         {
-        	"id" : 	3,
-        	"title" : "Titre 3",
-        	"content" : "Contents 3"
+          "id" : 3,
+          "title" : "Titre 3",
+          "image" : "",
+          "content" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+          "exerpt" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition"
         }, 
         {
-        	"id" : 	4,
-        	"title" : "Titre 4",
-        	"content" : "Contents 4"
+          "id" : 4,
+          "title" : "Titre 4",
+          "image" : "",
+          "content" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition",
+          "exerpt" : "Le Lorem Ipsum est simplement du faux texte employé dans la composition"
         }
 	]
 }
+
