@@ -34,34 +34,32 @@
 
 
 //FETCH
+function myFunction(id){
+	document.querySelectorAll('.col-md-4').forEach(function(a){
+		a.remove()
+	})
+	document.querySelectorAll('input').forEach(function(b){
+		b.remove()
+	})
+	fetch('article-content.html.tpl')
+	.then(response => response.text())
+	.then(templateString => {
+		let parserHTML = new DOMParser();
+		let template = parserHTML.parseFromString(templateString, 'text/html').body.firstChild;
 
- fetch('article.html.tpl')
-    .then( response => response.text() )
-    .then( templateString => {
-      let parserHTML = new DOMParser();
-      let template   = parserHTML.parseFromString(templateString,'text/html').body.firstChild;
-
-      fetch('https://my-json-server.typicode.com/shahin321/dbarticles/articles')
-        .then( response => response.json() )
-        .then( articles => {
-
-           if (articles) {
-               for (let article of articles) {
-                    let clone = template.cloneNode(true);
-                    clone.querySelector('[article-title]').innerText = article.title;
-				    clone.querySelector('[article-content]').innerText = article.content;
-                    clone.querySelector('[article-image]').setattribute("src", article.image;
-                    clone.querySelector('[article-excerpt]').innerText = article.excerpt;
-                        //crée un clone
-                    document.querySelector('#articles').appendChild(clone);
-               }
-           }
-
-        });
-    });
-
-
-
+		fetch('https://my-json-server.typicode.com/shahin321/dbarticles/articles' + id)
+			.then(response => response.json())
+			.then(articles => {
+				if (articles){
+					let clone = template.cloneNode(true);
+					clone.querySelector('[article-title]').innerText = articles.title;
+					clone.querySelector('[article-content]').innerText = articles.content;
+					clone.querySelector('[article-img]').setAttribute("src", articles.img );
+					document.querySelector('#articles').appendChild(clone);
+				}
+			});
+	});
+};
  fetch('article.html.tpl')
 .then(response => response.text())
 .then(templateString => {
@@ -76,7 +74,7 @@ let template = parserHTML.parseFromString(templateString, 'text/html').body.firs
 				let clone = template.cloneNode(true);
 				clone.querySelector('[article-title]').innerText = article.title;
 				clone.querySelector('[article-content]').innerText = article.content;
-				clone.querySelector('[article-img]').setAttribute("src", article.img );
+				clone.querySelector('[article-images]').setAttribute("src", article.images );
 				var input = document.createElement('input');
 				input.setAttribute("type", "hidden")
 				input.id = 'input_' + article.id ;
