@@ -54,7 +54,7 @@ function myFunction(id){
 					let clone = template.cloneNode(true);
 					clone.querySelector('[article-title]').innerText = articles.title;
 					clone.querySelector('[article-content]').innerText = articles.content;
-					clone.querySelector('[article-img]').setAttribute("src", articles.img );
+					clone.querySelector('[article-image]').setAttribute("src", articles.image );
 					document.querySelector('#articles').appendChild(clone);
 				}
 			});
@@ -74,7 +74,7 @@ let template = parserHTML.parseFromString(templateString, 'text/html').body.firs
 				let clone = template.cloneNode(true);
 				clone.querySelector('[article-title]').innerText = article.title;
 				clone.querySelector('[article-content]').innerText = article.content;
-				clone.querySelector('[article-images]').setAttribute("src", article.images );
+				clone.querySelector('[article-image]').setAttribute("src", article.image );
 				var input = document.createElement('input');
 				input.setAttribute("type", "hidden")
 				input.id = 'input_' + article.id ;
